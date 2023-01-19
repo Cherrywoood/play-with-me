@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet.context-path: /api
+
+spring:
+  application:
+    name: play_with_me
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://c-c9q86jpm6rrls890l2kv.rw.mdb.yandexcloud.net:6432/db1?targetServerType=master&ssl=false&sslmode=disable
+    username: user
+    password: 12345678
+  jpa:
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: false
+  jackson:
+    time-zone: "UTC"
+jwt:
+  secret: c3ByaW5n

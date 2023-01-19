@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: play_with_me_pg
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: play_with_me
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+    volumes:
+      - ./postgres/db:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./insert.sql:/docker-entrypoint-initdb.d/insert.sql
+
+  play-with-me:
+    build:
+      context: ..
+    container_name: play-with-me-app
+    ports:
+      - "8080:8080"

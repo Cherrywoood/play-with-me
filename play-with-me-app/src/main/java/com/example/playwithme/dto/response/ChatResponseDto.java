@@ -1,0 +1,24 @@
+package com.example.playwithme.dto.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class ChatResponseDto {
+    private UUID id;
+    private String name;
+    private UUID adminId;
+    private String adminName;
+    private Date dateCreated;
+    private List<UUID> membersId;
+    private List<String> membersName;
+}
